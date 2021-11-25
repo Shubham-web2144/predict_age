@@ -21,7 +21,6 @@ const errorShow = () => {
   errorBox.style.display = "none";
 };
 
-
 let save = [];
 btnSub.addEventListener("click", (event) => {
   event.preventDefault();
@@ -34,29 +33,29 @@ btnSub.addEventListener("click", (event) => {
   } else {
     outputBox.style.display = "block";
     fetch(`https://api.agify.io?name=${input.value}`)
-        .then((res) => res.json())
-        .then((data) => {
-          let age = data.age;
-          let name = data.name;
-          // console.log(age, name);
-          userName.innerHTML = name;
-          userAge.innerHTML = age;
-        });
+      .then((res) => res.json())
+      .then((data) => {
+        let age = data.age;
+        let name = data.name;
+        // console.log(age, name);
+        userName.innerHTML = name;
+        userAge.innerHTML = age;
+      });
 
-        fetch(`https://api.genderize.io?name=${input.value}
+    fetch(`https://api.genderize.io?name=${input.value}
         `)
-          .then((res) => res.json())
-          .then((data) => {
-            let gen = data.gender;
-            userGen.innerHTML = gen;
-          });
-          save.push(input.value);
-          // fetchGen();
-        }
-        console.log(save);
-    });
+      .then((res) => res.json())
+      .then((data) => {
+        let gen = data.gender;
+        userGen.innerHTML = gen;
+      });
+    save.push(input.value);
+    // fetchGen();
+  }
+  // console.log(save);
+  input.value = "";
+});
 
-    
 closeBtn.addEventListener("click", () => {
   outputBox.style.display = "none";
 });
