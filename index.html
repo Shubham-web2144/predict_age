@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Age Prediction</h1>
+        <p>Let's check how old you are ?</p>
+      </div>
+      <div class="instruction_box">
+        <h3>Instructions :</h3>
+        <ul>
+          <li>Press on below <strong>'continue'</strong> button</li>
+          <li>
+            Then enter your name <br />
+            (This game predict your age from your name)
+          </li>
+          <li>Click on <strong>'Check Your Age'</strong> button</li>
+          <li>
+            <strong>Note</strong>: Please do not click again and again on
+            <strong>'Check Your Age'</strong> button with same name
+          </li>
+        </ul>
+        <button class="btn">Continue</button>
+      </div>
+      <div class="game_board">
+        <div class="error_box">
+          <span>This is an error</span>
+        </div>
+        <div class="form_field">
+          <form method="POST" data-netlify="true">
+            <label for="name">Enter Your First Name</label>
+            <input type="text" class="input" placeholder="Enter name here..."/>
+            <button type="submit" class="btn_sub">Check Your Age</button>
+          </form>
+        </div>
+        <div class="output_box">
+          <div class="output_head">
+            <h3>Result</h3>
+            <button class="close_btn">X</button>
+          </div>
+          <ul>
+            <li>Hey, <span id="name"></span></li>
+            <li >Your Age is <span id="age"></span></li>
+            <li>You are a <span id="gender"></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
+
